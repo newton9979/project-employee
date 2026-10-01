@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Employee Task Manager</h1></header>
+  <main>
+    <section>
+      <h2>Employees</h2>
+      <div class="row">
+        <input id="emp-name" placeholder="Name">
+        <input id="emp-email" placeholder="Email">
+        <input id="emp-dept" placeholder="Department">
+        <button onclick="addEmployee()">Add employee</button>
+      </div>
+      <table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Department</th></tr></thead>
+      <tbody id="emp-list"></tbody></table>
+    </section>
+    <section>
+      <h2>Tasks</h2>
+      <div class="row">
+        <select id="task-emp"></select>
+        <input id="task-name" placeholder="Task name">
+        <button onclick="addTask()">Add task</button>
+      </div>
+      <table><thead><tr><th>ID</th><th>Task</th><th>Assigned to</th><th>Status</th><th></th></tr></thead>
+      <tbody id="task-list"></tbody></table>
+    </section>
+    <p id="msg" role="status"></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

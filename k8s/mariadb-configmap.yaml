@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: employee-app
+data:
+  DB_HOST: mariadb
+  DB_PORT: "3306"
+  DB_NAME: employee_db
