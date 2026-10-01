@@ -9,16 +9,15 @@ Reset the database: `docker compose down -v`
 
 ## Step 2: Deploy to Kubernetes (minikube / kind / kubeadm)
 
-Build images:
+Images are pulled from Docker Hub (no local build or image load needed):
 
-    docker build -t employee-backend:1.0 ./backend
-    docker build -t employee-frontend:1.0 ./frontend
+    docker pull newton9/employee-backend:1.0
+    docker pull newton9/employee-frontend:1.0
 
-Load into the cluster (no registry needed):
+To rebuild and push your own:
 
-    minikube image load employee-backend:1.0
-    minikube image load employee-frontend:1.0
-    # kind: kind load docker-image employee-backend:1.0 employee-frontend:1.0
+    docker build -t newton9/employee-backend:1.0 ./backend && docker push newton9/employee-backend:1.0
+    docker build -t newton9/employee-frontend:1.0 ./frontend && docker push newton9/employee-frontend:1.0
 
 Deploy (order matters):
 
